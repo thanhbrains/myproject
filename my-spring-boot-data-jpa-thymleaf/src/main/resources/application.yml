@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: HR
+    password: root
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    data-source-class-name:  
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+      
+  mvc:
+    view:
+      prefix: /views/
+  thymeleaf:
+    enabled: true
+    prefix: /views/
+    suffix: .html
+        
+server:
+  address: localhost
+  port: 8380
+  
