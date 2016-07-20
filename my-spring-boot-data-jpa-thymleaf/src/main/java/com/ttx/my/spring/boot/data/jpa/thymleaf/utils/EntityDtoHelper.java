@@ -287,9 +287,9 @@ public class EntityDtoHelper {
 		}
 		return path;
 	}
-
-	public static void main(String[] args) throws Exception {
-		generateDtoFromEntity("com.ttx.my.spring.boot.data.jpa.thymleaf.entity",
-				"com.ttx.my.spring.boot.data.jpa.thymleaf.domain");
-	}
+	//
+	// public static void main(String[] args) throws Exception {
+	// generateDtoFromEntity("com.ttx.my.spring.boot.data.jpa.thymleaf.entity",
+	// "com.ttx.my.spring.boot.data.jpa.thymleaf.domain");
+	// }
 }
