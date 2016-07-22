@@ -12,26 +12,10 @@ import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
-
-/**
- * 
- * @author thanh
- *
- */
-
 @Documented
 @Retention(RUNTIME)
 @Target({ TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, PACKAGE })
-@Constraint(validatedBy = CustomConstraintValidator.class)
-public @interface Valid {
+public @interface TargetCheck {
 
-	String message() default "{}";
-
-	boolean stepBystep() default true;
-
-	Class<?>[] groups() default {};
-
-	Class<? extends Payload>[] payload() default {};
+	int index() default 0;
 }

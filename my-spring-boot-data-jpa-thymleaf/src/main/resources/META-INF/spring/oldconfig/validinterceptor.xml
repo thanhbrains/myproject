@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+	<aop:config>
+		<aop:aspect id="testAspectj" ref="validInterceptor">
+		    <aop:pointcut expression="execution(* com..*.(..))" id="test"/> 
+		    <aop:around method="handler" pointcut-ref="test"/>
+		</aop:aspect>
+	</aop:config>
+	
+	<aop:config>
+		<aop:aspect id="service" ref="validInterceptor">
+		    <aop:pointcut expression="@annotation(com.ttx.my.spring.boot.data.jpa.thymleaf.utils.TargetCheck)" id="valid"/> 
+		    <aop:around method="handler" pointcut-ref="valid"/>
+		</aop:aspect>
+	</aop:config>
+	
+	<bean id="validInterceptor" class="com.ttx.my.spring.boot.data.jpa.thymleaf.configure.ValidInterceptor"/>
+	<!-- Luu y cung context -->
+</beans>

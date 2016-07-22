@@ -7,6 +7,8 @@ spring:
     data-source-class-name:  
   jpa:
     database-platform: org.hibernate.dialect.Oracle10gDialect
+  aop:
+    auto: true
       
   mvc:
     view:
